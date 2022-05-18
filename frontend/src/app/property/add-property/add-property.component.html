@@ -1,0 +1,160 @@
+<div class="wrapper">
+  <div class="row">
+    <div class="col col-8">
+      <mat-card>
+        <mat-card-header style="color:#3f51b5">
+          <h3>Add new property</h3>
+        </mat-card-header>
+        <mat-tab-group mat-align-tabs="start" [(selectedIndex)]="selectedIndex"
+          (selectedTabChange)="tabChanged($event)">
+          <mat-tab label="Basic Information">
+            <br />
+            <form (ngSubmit)="onSubmit()" #Form="ngForm">
+              <div class="form-group col-12">
+                <p>I want to</p>
+                <div class="btn-group" btnRadioGroup>
+                  <label class="btn btn-outline-primary mr-2" btnRadio=1 tabindex="0" role="button"
+                    name="SellRent">Sell</label>
+                  <label class="btn btn-outline-primary" btnRadio=2 tabindex="0" role="button"
+                    name="SellRent">Rent</label>
+                </div>
+              </div>
+
+              <div class="form-group col-12">
+                <p>BHK</p>
+                <div class="btn-group" btnRadioGroup>
+                  <label *ngFor="let bhk of [1,2,3,4]" class="btn btn-outline-primary mr-2" tabindex="0" role="button"
+                    name="BHK">{{bhk}}</label>
+                </div>
+              </div><br />
+
+              <div class="form-group col-12">
+                <p>Property Type</p>
+                <div class="btn-group" btnRadioGroup name='propType' [(ngModel)]="propertyItem.Type">
+                  <label *ngFor="let ptype of propertyTypes" class="btn btn-outline-primary mr-2" [btnRadio]="ptype"
+                    tabindex="0" role="button" name="PropType">{{ptype}}
+                  </label>
+                </div>
+              </div>F<br />
+
+              <div class="form-group col-12">
+                <p>Furnished Type</p>
+                <div class="btn-group" btnRadioGroup>
+                  <label *ngFor="let ftype of furnishTypes" class="btn btn-outline-primary mr-2" tabindex="0"
+                    role="button" name="BHK">{{ftype}}</label>
+                </div>
+              </div><br />
+
+              <div class="form-group col-12">
+                <input type="text" placeholder="in Building/ Society/Project" class="form-control" #propName="ngModel"
+                  ngModel name="Name" minlength="6" [(ngModel)]="propertyItem.Name" required>
+              </div><br />
+              <div class="form-group col-12">
+                <input type="text" placeholder="City" class="form-control">
+              </div><br />
+
+            </form>
+          </mat-tab>
+          <mat-tab label="Pricing & Areas">
+            <br />
+            <div class="form-group col-12">
+              <input type="text" placeholder="Price(in USD)" class="form-control" name="Name" required
+                [(ngModel)]="propertyItem.Price">
+            </div><br />
+            <div class="form-group col-12">
+              <input type="text" placeholder="Security(in USD)" class="form-control" name="Name" required>
+            </div><br />
+            <div class="form-group col-12">
+              <input type="text" placeholder="Maintanance(in USD)" class="form-control" name="Name" required>
+            </div><br />
+            <div class="form-group col-12">
+              <input type="text" placeholder="Build Area(in USD)" class="form-control" name="Name" required>
+            </div><br />
+            <div class="form-group col-12">
+              <input type="text" placeholder="Carpet Area(in USD)" class="form-control" name="Name" required>
+            </div><br />
+          </mat-tab>
+          <mat-tab label="Address Information">
+            <br />
+            <div class="form-group col-12">
+              <input type="text" placeholder="Floor" class="form-control" name="Name" required>
+            </div><br />
+            <div class="form-group col-12">
+              <input type="text" placeholder="Total Floor" class="form-control" name="Name" required>
+            </div><br />
+            <div class="form-group col-12">
+              <input type="text" placeholder="Address" class="form-control" name="Name" required>
+            </div><br />
+            <div class="form-group col-12">
+              <input type="text" placeholder="Landmark" class="form-control" name="Name" required>
+            </div><br />
+          </mat-tab>
+          <mat-tab label="Other Details"><br />
+            <div class="form-group col-12">
+              <p>Ready to Move</p>
+              <div class="btn-group" btnRadioGroup>
+                <label class="btn btn-outline-primary mr-2" btnRadio=1 tabindex="0" role="button"
+                  name="SellRent">Yes</label>
+                <label class="btn btn-outline-primary" btnRadio=2 tabindex="0" role="button" name="SellRent">No</label>
+              </div>
+            </div>
+
+            <label>Available From</label>
+            <div class="col-xs-12 col-12 col-md-4 form-group mb-3">
+              <input type="text" placeholder="Datepicker" class="form-control" bsDatepicker
+                [bsConfig]="{ isAnimated: true }"
+                [bsConfig]="{containerClass: 'theme-dark-blue',dateInputFormat: 'DD-MM-YYYY'}">
+            </div>
+            <div class="form-group col-12">
+              <input type="text" placeholder="Age of property" class="form-control" name="Name" required>
+            </div><br />
+            <div class="form-group col-12">
+              <p>Gated Community</p>
+              <div class="btn-group" btnRadioGroup>
+                <label class="btn btn-outline-primary mr-2" btnRadio=1 tabindex="0" role="button"
+                  name="SellRent">Yes</label>
+                <label class="btn btn-outline-primary" btnRadio=2 tabindex="0" role="button" name="SellRent">No</label>
+              </div>
+            </div>
+            <div class="form-group col-12">
+              <p>Ready to Move</p>
+              <div class="btn-group" btnRadioGroup>
+                <label class="btn btn-outline-primary mr-2" btnRadio=1 tabindex="0" role="button"
+                  name="Entrance">East</label>
+                <label class="btn btn-outline-primary" btnRadio=2 tabindex="0" role="button"
+                  name="Entrance">West</label>
+                <label class="btn btn-outline-primary" btnRadio=3 tabindex="0" role="button"
+                  name="Entrance">South</label>
+                <label class="btn btn-outline-primary" btnRadio=4 tabindex="0" role="button"
+                  name="Entrance">North</label>
+              </div>
+            </div><br />
+            <div class="form-group col-12">
+              <textarea class="form-control" rows="3" placeholder="Description" class="form-control" name="Name"
+                required [(ngModel)]="propertyItem.Description"></textarea>
+            </div><br />
+          </mat-tab>
+          <mat-tab label="Photos">
+            <div class="form-group col-12 photo-box">
+              <div class="photo-control">
+                <button class="mt-5 m-auto" type="button">Upload</button><br />
+                This is under construction
+              </div>
+            </div>
+            <div class="button-set mt-2 f-right">
+              <button type="button" class="btn btn-primary " style="margin-right: 5px; ">Cancel</button>
+              <button type="button" class="btn btn-primary " style="margin-right: 5px; ">Save</button>
+            </div>
+          </mat-tab>
+        </mat-tab-group>
+
+      </mat-card>
+    </div>
+    <div class="col col-4">
+        <mat-card-header style="color:#3f51b5">
+          <h3>Preview your property</h3>
+        </mat-card-header>
+        <app-property-card [propertyItem]="propertyItem"></app-property-card>
+    </div>
+  </div>
+</div>

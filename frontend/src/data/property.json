@@ -1,0 +1,90 @@
+[{
+    "Id": 1,
+    "SellRent": 1,
+    "Name": "Yehan House",
+    "Description": "The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan. A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally bred for hunting.",
+    "Type": "House",
+    "Image": "house-2",
+    "Price": 120000
+  },
+  {
+    "Id": 2,
+    "SellRent": 1,
+    "Name": "Kalhara House",
+    "Description": "The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan. A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally bred for hunting.",
+    "Type": "House",
+    "Image": "house-3",
+    "Price": 220000
+  },
+  {
+    "Id": 3,
+    "SellRent": 1,
+    "Name": "Perera House",
+    "Description": "The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan. A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally bred for hunting.",
+    "Type": "House",
+    "Image": "house-4",
+    "Price": 320000
+  },
+  {
+    "Id": 4,
+    "SellRent": 2,
+    "Name": "Manjari House",
+    "Description": "The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan. A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally bred for hunting.",
+    "Type": "House",
+    "Image": "house-5",
+    "Price": 420000
+  },
+  {
+    "Id": 5,
+    "SellRent": 2,
+    "Name": "Piyathissa House",
+    "Description": "The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan. A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally bred for hunting.",
+    "Type": "House",
+    "Image": "house",
+    "Price": 520000
+  },
+  {
+    "Id": 6,
+    "SellRent": 1,
+    "Name": "Yehan House",
+    "Description": "The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan. A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally bred for hunting.",
+    "Type": "House",
+    "Image": "house-3",
+    "Price": 120000
+  },
+  {
+    "Id": 7,
+    "SellRent": 1,
+    "Name": "Kalhara House",
+    "Description": "The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan. A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally bred for hunting.",
+    "Type": "House",
+    "Image": "house-2",
+    "Price": 220000
+  },
+  {
+    "Id": 8,
+    "SellRent": 1,
+    "Name": "Perera House",
+    "Description": "The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan. A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally bred for hunting.",
+    "Type": "House",
+    "Image": "house-4",
+    "Price": 320000
+  },
+  {
+    "Id": 9,
+    "SellRent": 2,
+    "Name": "Manjari House",
+    "Description": "The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan. A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally bred for hunting.",
+    "Type": "House",
+    "Image": "house-5",
+    "Price": 420000
+  },
+  {
+    "Id": 10,
+    "SellRent": 2,
+    "Name": "Piyathissa House",
+    "Description": "The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan. A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally bred for hunting.",
+    "Type": "House",
+    "Price": 520000
+  }
+]

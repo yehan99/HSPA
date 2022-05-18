@@ -1,0 +1,16 @@
+<mat-card class="example-card" style="background-color: rgb(237, 236, 236);">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>{{propertyItem.Name}}</mat-card-title>
+    <mat-card-subtitle>{{propertyItem.Type}} &nbsp; {{propertyItem.Price}}</mat-card-subtitle>
+  </mat-card-header>
+  <img *ngIf="propertyItem.Image" mat-card-image src="assets/images/{{propertyItem.Image}}.jpg" >
+  <img *ngIf="!propertyItem.Image" mat-card-image src="assets/images/house.jpg" >
+  <mat-card-content>
+    <p>{{propertyItem.Description}}</p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button routerLink="/property-details/{{propertyItem.Id}}">Details</button>
+    <button mat-button>Contact</button>
+  </mat-card-actions>
+</mat-card>
