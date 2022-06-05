@@ -1,0 +1,10 @@
+<!-- dialog -->
+<h1 mat-dialog-title>Inspection Types</h1>
+<div mat-dialog-content>
+  <p *ngFor="let type of inspectionTypeList$|async">
+    {{type.id}} - {{type.inspectioName}}
+  </p>
+</div>
+<div mat-dialog-actions>
+  <button mat-button mat-dialog-close>Close</button>
+</div>

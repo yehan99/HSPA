@@ -1,6 +1,5 @@
-import { AuthService } from './services/auth.service';
+import { InspectionApiService } from './services/inspection-api.service';
 import { RegisterComponent } from './User/register/register.component';
-import { LoginComponent } from './User/login/login.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { NgModule } from '@angular/core';
@@ -12,11 +11,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule, Routes } from '@angular/router';
-import { AddPropertyComponent } from './property/add-property/add-property.component';
-import { PropertyCardComponent } from './property/property-card/property-card.component';
-import { PropertyDetailsComponent } from './property/property-details/property-details.component';
-import { PropertyListComponent } from './property/property-list/property-list.component';
-import { HousingService } from './services/housing.service';
 import { UserService } from './services/user.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -27,28 +21,29 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatInputModule } from '@angular/material/input';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { ButtonsModule } from 'ngx-bootstrap/buttons';
+import { TabsModule } from 'ngx-bootstrap/tabs';
+import { InspectionComponent } from './Inspection/inspection/inspection.component';
+import { ShowInspectionComponent } from './Inspection/show-inspection/show-inspection.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import { InspectionTypeDialogComponent } from './inspection-type-dialog/inspection-type-dialog.component';
+import { NewInspectionComponent } from './Inspection/new-inspection/new-inspection.component';
+import {MatSelectModule} from '@angular/material/select';
 
 const routes: Routes = [
-  {path: '', component: PropertyListComponent},
-  {path: 'rent-property', component: PropertyListComponent},
-  {path: 'add-property', component: AddPropertyComponent},
-  {path: 'property-details/:id', component: PropertyDetailsComponent},
-  {path: 'login', component: LoginComponent},
-  {path: 'register', component: RegisterComponent},
-  {path: '**' , component: PageNotFoundComponent}
+  // {path: '**' , component: PageNotFoundComponent},
+  {path: '' , component: ShowInspectionComponent}
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
-    PropertyCardComponent,
-    PropertyListComponent,
     NavBarComponent,
-    AddPropertyComponent,
-    PropertyDetailsComponent,
     PageNotFoundComponent,
-    LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    InspectionComponent,
+    ShowInspectionComponent,
+    InspectionTypeDialogComponent,
+    NewInspectionComponent,
   ],
   imports: [
     BrowserModule,
@@ -67,12 +62,14 @@ const routes: Routes = [
     MatTabsModule,
     MatButtonModule,
     BsDatepickerModule.forRoot(),
-    ButtonsModule.forRoot()
+    ButtonsModule.forRoot(),
+    TabsModule.forRoot(),
+    MatDialogModule,
+    MatSelectModule
   ],
   providers: [
-    HousingService,
     UserService,
-    AuthService
+    InspectionApiService
   ],
   bootstrap: [AppComponent]
 })

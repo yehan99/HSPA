@@ -1,0 +1,94 @@
+<div class="wrapper">
+  <div class="row">
+    <div class="col-6" >
+      <mat-card style="min-height: 15.5rem;">
+        <h2>Inspection List</h2>
+        <table class="table table-striped">
+          <thead>
+            <th>Id</th>
+            <th>Inspection Types</th>
+            <th>Status</th>
+            <th>Comments</th>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of inspectionList$|async">
+              <td>{{item.id}}</td>
+              <td>{{InspectionTypeMap.get(item.inSpectionTypeId)}}</td>
+              <td>{{item.status}}</td>
+              <td>{{item.comment}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </mat-card>
+
+    </div>
+    <div class="col-6">
+      <mat-card>
+        <h2>Add Inspection</h2>
+      <div>
+        <form [formGroup]="addInspectionForm">
+          <div class="row">
+            <div class="col-6">
+              <mat-form-field>
+                <mat-label>Inspection Type</mat-label>
+                <mat-select formControlName = "InspectType">
+                  <mat-option *ngFor="let type of inspectionTypeList$|async" [value]="type.inspectioName" >
+                    {{type.inspectioName}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="col-6">
+              <mat-form-field>
+                <mat-label>Status</mat-label>
+                <mat-select formControlName = "status">
+                  <mat-option *ngFor="let status of statusList$|async" [value]="status.statusOption"  >
+                    {{status.statusOption}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="col-12 ">
+              <mat-form-field class="w-100">
+                <mat-label>Comment</mat-label>
+                <textarea matInput matTextareaAutosize matAutosizeMinRows="3" matAutosizeMaxRows="5" formControlName = "comment"></textarea>
+              </mat-form-field>
+            </div>
+          </div>
+
+        </form>
+      </div>
+      <div mat-dialog-actions>
+        <button mat-raised-button color="primary" style="margin-right: 10px;" (click)="save()" >Save</button>
+        <button mat-button mat-dialog-close (click)="cancel()">Cancel</button>
+      </div>
+      </mat-card>
+
+
+    </div>
+    <div class="col-6 mt-2">
+      <mat-card>
+        <h2>Add Inspection Type</h2>
+      <div>
+        <form [formGroup]="addInspectionTypeForm">
+          <div class="row">
+            <div class="col-6">
+              <mat-form-field>
+                <mat-label>Inspection Type</mat-label>
+                <input matInput formControlName = "InspectTypeOnly">
+              </mat-form-field>
+            </div>
+          </div>
+
+        </form>
+      </div>
+      <div mat-dialog-actions>
+        <button mat-raised-button color="primary" style="margin-right: 10px;" (click)="saveInspectionType()" >Save</button>
+        <button mat-button mat-dialog-close (click)="cancel()">Cancel</button>
+      </div>
+      </mat-card>
+
+
+    </div>
+  </div>
+</div>
+
+
